@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static com.project.SettingsInterface.BASE_URL;
 import static com.project.SettingsInterface.LIST_CHROME_OPTIONS;
 
 public abstract class BaseTest {
@@ -19,7 +18,6 @@ public abstract class BaseTest {
 
 
         driver.manage().window().maximize();
-        driver.get(BASE_URL);
     }
 
 

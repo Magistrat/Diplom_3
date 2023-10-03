@@ -4,6 +4,7 @@ import java.util.List;
 
 public interface SettingsInterface {
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
+    public static final String REGISTER_URL = "https://stellarburgers.nomoreparties.site/register";
 
     public static final List<String> LIST_CHROME_OPTIONS = List.of(
             "--no-sandbox",
