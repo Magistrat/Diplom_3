@@ -6,6 +6,7 @@ public interface SettingsApiInterface {
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
 
     public static final String REGISTER_USER_URL = "/api/auth/register";
+    public static final String LOGIN_USER_URL = "/api/auth/login";
     public static final String DELETE_USER_URL = "/api/auth/register";
 
     public static final String CONTENT_TYPE = "Content-Type";
