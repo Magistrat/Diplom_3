@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import static com.project.SettingsInterface.REGISTER_URL;
+import static com.pageobject.SettingsUiTestInterface.REGISTER_URL;
 
 public class RegistrationTest extends BaseTest {
 

@@ -1,4 +1,4 @@
-package com.project.pages;
+package com.pageobject.pages;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.project.SettingsInterface.EXPLICITLY_TIMEOUT;
+import static com.pageobject.SettingsUiTestInterface.EXPLICITLY_TIMEOUT;
 
 public abstract class BasePage {
     private final WebDriver driver;

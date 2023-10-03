@@ -1,6 +1,6 @@
-package com.project.pages;
+package com.pageobject.pages;
 
-import com.project.locators.RegistrationLocators;
+import com.pageobject.locators.RegistrationLocators;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 

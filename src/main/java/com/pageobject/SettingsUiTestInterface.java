@@ -1,8 +1,10 @@
-package com.project;
+package com.pageobject;
 
 import java.util.List;
 
-public interface SettingsInterface {
+public interface SettingsUiTestInterface {
+    // Настройки для Автотестов UI через Selenium
+
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
     public static final String REGISTER_URL = "https://stellarburgers.nomoreparties.site/register";
 

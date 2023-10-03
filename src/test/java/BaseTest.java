@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static com.project.SettingsInterface.LIST_CHROME_OPTIONS;
+import static com.pageobject.SettingsUiTestInterface.LIST_CHROME_OPTIONS;
 
 public abstract class BaseTest {
 
