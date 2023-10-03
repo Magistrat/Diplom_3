@@ -7,4 +7,8 @@ public interface SettingsApiInterface {
 
     public static final String REGISTER_USER_URL = "/api/auth/register";
     public static final String DELETE_USER_URL = "/api/auth/register";
+
+    public static final String CONTENT_TYPE = "Content-Type";
+    public static final String APPLICATION_JSON = "application/json";
+
 }
