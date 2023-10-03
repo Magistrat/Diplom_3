@@ -26,4 +26,9 @@ public abstract class BasePage {
         driver.findElement(locator).sendKeys(textInput);
     }
 
+    @Step("Кликнуть на элемент")
+    public void clickToElement(By locator){
+        driver.findElement(locator).click();
+    }
+
 }

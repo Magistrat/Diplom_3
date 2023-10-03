@@ -47,7 +47,6 @@ public class CrateLoginDeleteUserByApi {
     public static void deleteUserByBearerToken(String bearerToken){
         given()
                 .header("Authorization", bearerToken)
-                .header(CONTENT_TYPE, APPLICATION_JSON)
                 .when()
                 .delete(DELETE_USER_URL);
     }
