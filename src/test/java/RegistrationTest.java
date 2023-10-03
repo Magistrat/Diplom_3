@@ -1,4 +1,5 @@
 import com.api.pojo.login.LoginPositiveRequestPojo;
+import com.pageobject.pages.LoginPage;
 import com.pageobject.pages.RegistrationPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
@@ -36,6 +37,9 @@ public class RegistrationTest extends BaseTest {
         registrationPage.checkRegistrationPage();
         registrationPage.fillToRegistrationFields(generatedTestName, generatedTestEmail, generatedTestPassword);
         registrationPage.clickToRegisterInForm();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.checkLoginPage();
     }
 
     @After
