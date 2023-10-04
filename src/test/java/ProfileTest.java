@@ -91,7 +91,7 @@ public class ProfileTest extends BaseTest{
         ProfilePage profilePage = new ProfilePage(driver);
         profilePage.clickLogOutInProfile();
 
-        loginPage.checkLoginPage();;
+        loginPage.checkLoginPage();
     }
 
     @After
