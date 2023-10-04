@@ -8,5 +8,10 @@ public interface ProfileLocators {
     public static final By buttonProfileInProfile = By.xpath(".//a[text() = 'Профиль']");
     public static final By buttonOrdersHistoryInProfile = By.xpath(".//a[text() = 'История заказов']");
     public static final By buttonLogOutInProfile = By.xpath(".//button[text() = 'Выход']");
+    public static final By helpMessageInProfile = By.xpath(
+            "//p[text()='В этом разделе вы можете изменить свои персональные данные']"
+    );
+    public static final By labelNameInProfile = By.xpath("//label[text()='Имя']");
+    public static final By labelLoginInProfile = By.xpath("//label[text()='Логин']");
 
 }
