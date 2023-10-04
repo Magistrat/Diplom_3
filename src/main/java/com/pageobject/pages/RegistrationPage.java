@@ -41,4 +41,9 @@ public class RegistrationPage extends HeaderPage implements RegistrationLocators
         elementHasVisibility(messageIncorrectPassword);
     }
 
+    @Step("Клик на кнопку 'Уже зарегистрированы?' на странице Регистрации")
+    public void clickToLoginFromRegistrationPage(){
+        clickToElement(linkIfAlreadyRegistered);
+    }
+
 }
