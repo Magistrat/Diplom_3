@@ -2,21 +2,22 @@ import com.api.pojo.login.LoginPositiveRequestPojo;
 import com.api.pojo.register.RegisterPositiveRequestPojo;
 import com.pageobject.pages.LoginPage;
 import com.pageobject.pages.MainPage;
+import com.pageobject.pages.RegistrationPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static com.api.CrateLoginDeleteUserByApi.*;
-import static com.pageobject.SettingsUiTestInterface.BASE_URL;
+import static com.pageobject.pages.BasePage.openMainPage;
+import static com.pageobject.pages.BasePage.openForgotPasswordPage;
+import static com.pageobject.pages.BasePage.openRegistrationPage;
 
-public class LoginFromMainPageTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
     @Before
-    public void openMainPage(){
-        // Окрытие Главой страницы, создание тестового пользователя
-        driver.get(BASE_URL);
-
+    public void createTestUser(){
+        // Создание тестового пользователя
         creteUserByApiAndGetBearerToken(
                 new RegisterPositiveRequestPojo(
                         generatedTestEmail,
@@ -29,8 +30,9 @@ public class LoginFromMainPageTest extends BaseTest {
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
     public void loginToAccountFromMainPage(){
-        MainPage mainPage = new MainPage(driver);
+        openMainPage(driver);
 
+        MainPage mainPage = new MainPage(driver);
         mainPage.checkMainPage(false);
         mainPage.clickToLoginToAccountFromMainPage();
 
@@ -45,8 +47,9 @@ public class LoginFromMainPageTest extends BaseTest {
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
     public void loginToAccountFromClickProfilePage(){
-        MainPage mainPage = new MainPage(driver);
+        openMainPage(driver);
 
+        MainPage mainPage = new MainPage(driver);
         mainPage.checkMainPage(false);
         mainPage.clickToProfileButtonFromHeader();
 
@@ -55,6 +58,24 @@ public class LoginFromMainPageTest extends BaseTest {
         loginPage.fillToLoginFields(generatedTestEmail, generatedTestPassword);
         loginPage.clickToLoginInForm();
 
+        mainPage.checkMainPage(true);
+    }
+
+    @Test
+    @DisplayName("Вход через кнопку в форме регистрации")
+    public void loginToAccountFromRegisterPage(){
+        openRegistrationPage(driver);
+
+        RegistrationPage registrationPage = new RegistrationPage(driver);
+        registrationPage.checkRegistrationPage();
+        registrationPage.clickToLoginFromRegistrationPage();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.checkLoginPage();
+        loginPage.fillToLoginFields(generatedTestEmail, generatedTestPassword);
+        loginPage.clickToLoginInForm();
+
+        MainPage mainPage = new MainPage(driver);
         mainPage.checkMainPage(true);
     }
 

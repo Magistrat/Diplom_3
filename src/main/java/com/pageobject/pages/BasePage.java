@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static com.pageobject.SettingsUiTestInterface.EXPLICITLY_TIMEOUT;
+import static com.pageobject.SettingsUiTestInterface.*;
 
 public abstract class BasePage {
     private final WebDriver driver;
@@ -31,4 +31,18 @@ public abstract class BasePage {
         driver.findElement(locator).click();
     }
 
+    @Step("Открытие Главной страницы")
+    public static void openMainPage(WebDriver driver){
+        driver.get(BASE_URL);
+    }
+
+    @Step("Открытие страницы Регистрации")
+    public static void openRegistrationPage(WebDriver driver){
+        driver.get(REGISTER_URL);
+    }
+
+    @Step("Открытие страницы Восстановления пароля")
+    public static void openForgotPasswordPage(WebDriver driver){
+        driver.get(FORGOT_PASSWORD_FORM_URL);
+    }
 }
