@@ -7,6 +7,7 @@ public interface SettingsUiTestInterface {
 
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
     public static final String REGISTER_URL = "https://stellarburgers.nomoreparties.site/register";
+    public static final String LOGIN_URL = "https://stellarburgers.nomoreparties.site/login";
     public static final String FORGOT_PASSWORD_FORM_URL = "https://stellarburgers.nomoreparties.site/forgot-password";
 
     public static final List<String> LIST_CHROME_OPTIONS = List.of(

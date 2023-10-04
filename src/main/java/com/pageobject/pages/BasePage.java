@@ -28,6 +28,7 @@ public abstract class BasePage {
 
     @Step("Кликнуть на элемент")
     public void clickToElement(By locator){
+        elementHasVisibility(locator);
         driver.findElement(locator).click();
     }
 
@@ -44,5 +45,10 @@ public abstract class BasePage {
     @Step("Открытие страницы Восстановления пароля")
     public static void openForgotPasswordPage(WebDriver driver){
         driver.get(FORGOT_PASSWORD_FORM_URL);
+    }
+
+    @Step("Открытие страницы Авторизация")
+    public static void openLoginPage(WebDriver driver){
+        driver.get(LOGIN_URL);
     }
 }
