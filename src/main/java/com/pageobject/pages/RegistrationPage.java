@@ -4,7 +4,7 @@ import com.pageobject.locators.RegistrationLocators;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-public class RegistrationPage extends BasePage implements RegistrationLocators {
+public class RegistrationPage extends HeaderPage implements RegistrationLocators {
     // Page Object для страницы Регистрации
 
     public RegistrationPage(WebDriver driver) {

@@ -16,6 +16,7 @@ public class RegistrationTest extends BaseTest {
 
     @Before
     public void openRegistrationPage(){
+        // Окрытие страницы
         driver.get(REGISTER_URL);
     }
 
@@ -48,6 +49,7 @@ public class RegistrationTest extends BaseTest {
 
     @After
     public void deleteTestUser(){
+        // Удаление пользователя
         String bearerToken = loginUserByApiAndGetBearerToken(
                 new LoginPositiveRequestPojo(
                         generatedTestEmail,
@@ -61,5 +63,4 @@ public class RegistrationTest extends BaseTest {
         }
 
     }
-
 }
