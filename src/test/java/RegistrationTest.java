@@ -9,15 +9,15 @@ import org.junit.Test;
 
 import static com.api.CrateLoginDeleteUserByApi.deleteUserByBearerToken;
 import static com.api.CrateLoginDeleteUserByApi.loginUserByApiAndGetBearerToken;
-import static com.pageobject.SettingsUiTestInterface.REGISTER_URL;
+import static com.pageobject.pages.BasePage.openRegistrationPage;
 
 public class RegistrationTest extends BaseTest {
     // Автотесты для Регистрации пользователя
 
     @Before
-    public void openRegistrationPage(){
+    public void openRegistration(){
         // Окрытие страницы
-        driver.get(REGISTER_URL);
+        openRegistrationPage(driver);
     }
 
     @Test
