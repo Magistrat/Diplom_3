@@ -12,4 +12,5 @@ public interface RegistrationLocators {
     public static final By buttonForRegistrationForm = By.xpath(".//button[text() = 'Зарегистрироваться']");
     public static final By paragraphAlreadyRegistered = By.xpath(".//div/p[text() = 'Уже зарегистрированы?']");
     public static final By linkIfAlreadyRegistered = By.xpath(".//a[text() = 'Войти' and @href = '/login']");
+    public static final By messageIncorrectPassword = By.xpath(".//p[text() = 'Некорректный пароль']");
 }

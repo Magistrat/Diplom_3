@@ -32,6 +32,20 @@ public class RegistrationTest extends BaseTest {
         loginPage.checkLoginPage();
     }
 
+    @Test
+    @DisplayName("Ошибка для некорректного пароля. Минимальный пароль — шесть символов")
+    public void negativeRegistrationCheckMinimumLengthPassword(){
+        RegistrationPage registrationPage = new RegistrationPage(driver);
+
+        registrationPage.checkRegistrationPage();
+        registrationPage.fillToRegistrationFields(generatedTestName, generatedTestEmail, invalidGeneratedTestPassword);
+        registrationPage.clickToRegisterInForm();
+
+        registrationPage.checkMessageOfIncorrectPassword();
+        registrationPage.checkRegistrationPage();
+    }
+
+
     @After
     public void deleteTestUser(){
         String bearerToken = loginUserByApiAndGetBearerToken(
@@ -40,7 +54,12 @@ public class RegistrationTest extends BaseTest {
                         generatedTestPassword
                 )
         );
-        deleteUserByBearerToken(bearerToken);
+
+        if (bearerToken != null) {
+            // Для негативного теста нету Bearer Token
+            deleteUserByBearerToken(bearerToken);
+        }
+
     }
 
 }

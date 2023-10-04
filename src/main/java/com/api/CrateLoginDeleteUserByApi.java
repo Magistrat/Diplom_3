@@ -45,6 +45,7 @@ public class CrateLoginDeleteUserByApi {
 
     @Step("Удаление пользователя при помощи Bearer Token")
     public static void deleteUserByBearerToken(String bearerToken){
+        System.out.println("8");
         given()
                 .header("Authorization", bearerToken)
                 .when()

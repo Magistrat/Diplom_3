@@ -34,4 +34,9 @@ public class RegistrationPage extends BasePage implements RegistrationLocators {
         clickToElement(buttonForRegistrationForm);
     }
 
+    @Step("Проверка уведомления о некорректном пароле")
+    public void checkMessageOfIncorrectPassword(){
+        elementHasVisibility(messageIncorrectPassword);
+    }
+
 }
