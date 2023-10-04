@@ -14,5 +14,6 @@ public interface MainLocators {
     public static final By storeSectionsIngredient = By.xpath(".//h2[text() ='Начинки']");
 
     public static final By buttonToLoginAccount = By.xpath(".//button[text() ='Войти в аккаунт']");
+    public static final By buttonToConfirmOrder = By.xpath(".//button[text() ='Оформить заказ']");
 
 }
