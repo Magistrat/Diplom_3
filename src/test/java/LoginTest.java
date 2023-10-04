@@ -2,6 +2,7 @@ import com.api.pojo.login.LoginPositiveRequestPojo;
 import com.api.pojo.register.RegisterPositiveRequestPojo;
 import com.pageobject.pages.LoginPage;
 import com.pageobject.pages.MainPage;
+import com.pageobject.pages.RecoveryPasswordPage;
 import com.pageobject.pages.RegistrationPage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
@@ -69,6 +70,24 @@ public class LoginTest extends BaseTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.checkRegistrationPage();
         registrationPage.clickToLoginFromRegistrationPage();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.checkLoginPage();
+        loginPage.fillToLoginFields(generatedTestEmail, generatedTestPassword);
+        loginPage.clickToLoginInForm();
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.checkMainPage(true);
+    }
+
+    @Test
+    @DisplayName("Вход через кнопку в форме восстановления пароля")
+    public void loginToAccountFromRecoveryPasswordPage(){
+        openForgotPasswordPage(driver);
+
+        RecoveryPasswordPage recoveryPasswordPage = new RecoveryPasswordPage(driver);
+        recoveryPasswordPage.checkRecoveryPasswordPage();
+        recoveryPasswordPage.clickIfRememberPassword();
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.checkLoginPage();
