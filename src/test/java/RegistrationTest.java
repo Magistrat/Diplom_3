@@ -9,23 +9,13 @@ import org.junit.Test;
 
 import static com.api.CrateLoginDeleteUserByApi.deleteUserByBearerToken;
 import static com.api.CrateLoginDeleteUserByApi.loginUserByApiAndGetBearerToken;
-import static com.common.GenerationData.*;
 import static com.pageobject.SettingsUiTestInterface.REGISTER_URL;
 
 public class RegistrationTest extends BaseTest {
     // Автотесты для Регистрации пользователя
 
-    private String generatedTestName;
-    private String generatedTestEmail;
-    private String generatedTestPassword;
-
-
     @Before
     public void openRegistrationPage(){
-        generatedTestName = generateTestData("name");
-        generatedTestEmail = generateTestDataEmail();
-        generatedTestPassword = generateTestData("password");
-
         driver.get(REGISTER_URL);
     }
 
