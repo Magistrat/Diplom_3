@@ -23,5 +23,16 @@ public class LoginPage extends HeaderPage implements LoginLocators {
         elementHasVisibility(linkRestorePassword);
     }
 
+    @Step("Ввод Email и пароля на странице Авторизации")
+    public void fillToLoginFields(String textEmail, String textPassword){
+        fillToInput(inputEmail, textEmail);
+        fillToInput(inputPassword, textPassword);
+    }
+
+    @Step("Клик на кнопку 'Войти' на странице Авторизации")
+    public void clickToLoginInForm(){
+        clickToElement(buttonForLoginForm);
+    }
+
 
 }
