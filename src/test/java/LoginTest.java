@@ -2,6 +2,7 @@ import com.api.pojo.login.LoginPositiveRequestPojo;
 import com.api.pojo.register.RegisterPositiveRequestPojo;
 import com.pageobject.pages.LoginPage;
 import com.pageobject.pages.MainPage;
+import com.pageobject.pages.ProfilePage;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -33,6 +34,22 @@ public class LoginTest extends BaseTest {
 
         mainPage.checkMainPage(false);
         mainPage.clickToLoginToAccountFromMainPage();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.checkLoginPage();
+        loginPage.fillToLoginFields(generatedTestEmail, generatedTestPassword);
+        loginPage.clickToLoginInForm();
+
+        mainPage.checkMainPage(true);
+    }
+
+    @Test
+    @DisplayName("Вход по кнопке «Войти в аккаунт» на главной странице")
+    public void loginToAccountFromClickProfilePage(){
+        MainPage mainPage = new MainPage(driver);
+
+        mainPage.checkMainPage(false);
+        mainPage.clickToProfileButtonFromHeader();
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.checkLoginPage();
