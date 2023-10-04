@@ -13,6 +13,8 @@ public class LoginPage extends HeaderPage implements LoginLocators {
 
     @Step("Проверка страницы Авторизации")
     public void checkLoginPage(){
+        checkHeaderPage();
+
         elementHasVisibility(hTwoLoginText);
         elementHasVisibility(inputEmail);
         elementHasVisibility(inputPassword);

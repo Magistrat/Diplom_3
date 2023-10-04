@@ -11,6 +11,8 @@ public class MainPage extends HeaderPage implements MainLocators {
 
     @Step("Проверка главной страницы")
     public void checkMainPage(boolean hasLogged){
+        checkHeaderPage();
+
         elementHasVisibility(textGatherBurger);
         elementHasVisibility(storeTabBread);
         elementHasVisibility(storeTabSauce);

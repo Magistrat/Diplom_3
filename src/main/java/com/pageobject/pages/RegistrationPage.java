@@ -13,6 +13,8 @@ public class RegistrationPage extends HeaderPage implements RegistrationLocators
 
     @Step("Проверка страницы Регистрации")
     public void checkRegistrationPage(){
+        checkHeaderPage();
+
         elementHasVisibility(hTwoRegistrationText);
         elementHasVisibility(inputName);
         elementHasVisibility(inputEmail);
