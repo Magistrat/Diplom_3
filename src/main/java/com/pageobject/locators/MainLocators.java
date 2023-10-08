@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public interface MainLocators {
     public static final By textGatherBurger = By.xpath(".//h1[text() = 'Соберите бургер']");
 
-    public static final By storeTabBread = By.xpath(".//span[contains(@class, 'text_type_main-default') and text() = 'Булки']");
+    public static final By storeTabBun = By.xpath(".//span[contains(@class, 'text_type_main-default') and text() = 'Булки']");
     public static final By storeTabSauce = By.xpath(".//span[contains(@class, 'text_type_main-default') and text() = 'Соусы']");
     public static final By storeTabIngredient = By.xpath(".//span[contains(@class, 'text_type_main-default') and text() = 'Начинки']");
     public static final By storeItems = By.xpath(".//ul/a[@href and contains(@class, 'BurgerIngredient')]");

@@ -14,7 +14,7 @@ public class MainPage extends HeaderPage implements MainLocators {
         checkHeaderPage();
 
         elementHasVisibility(textGatherBurger);
-        elementHasVisibility(storeTabBread);
+        elementHasVisibility(storeTabBun);
         elementHasVisibility(storeTabSauce);
         elementHasVisibility(storeTabIngredient);
         elementHasVisibility(storeItems);
@@ -32,6 +32,21 @@ public class MainPage extends HeaderPage implements MainLocators {
     @Step("Клик по кнопке «Войти в аккаунт» на главной странице")
     public void clickToLoginToAccountFromMainPage(){
         clickToElement(buttonToLoginAccount);
+    }
+
+    @Step("Клик на таб «Булки» на главной странице")
+    public void clickToTabBunFromMainPage(){
+        clickToElement(storeTabBun);
+    }
+
+    @Step("Клик на таб «Соусы» на главной странице")
+    public void clickToTabSauceFromMainPage(){
+        clickToElement(storeTabSauce);
+    }
+
+    @Step("Клик на таб «Начинки» на главной странице")
+    public void clickToTabIngredientFromMainPage(){
+        clickToElement(storeTabIngredient);
     }
 
 }
