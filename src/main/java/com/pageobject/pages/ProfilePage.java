@@ -33,8 +33,8 @@ public class ProfilePage extends HeaderPage implements ProfileLocators {
 
     @Step("Проверка текущего Имени и Логина в Личном Кабинете")
     private void checkLoginAndNameInProfilePage(String textName, String textEmail){
-        String inputNameString = "//input[@value = '" + textName + "']";
-        String inputEmailString = "//input[@value = '" + textEmail + "']";
+        String inputNameString = String.format("//input[@value = '%s']", textName);
+        String inputEmailString = String.format("//input[@value = '%s']", textEmail);
 
         elementHasVisibility(By.xpath(inputNameString));
         elementHasVisibility(By.xpath(inputEmailString));
