@@ -2,6 +2,7 @@ package com.pageobject.pages;
 
 import com.pageobject.locators.MainLocators;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends HeaderPage implements MainLocators {
@@ -27,6 +28,8 @@ public class MainPage extends HeaderPage implements MainLocators {
         } else {
             elementHasVisibility(buttonToLoginAccount);
         }
+
+        checkActiveTabConstructorInMainPage(MainPageTabs.BUN);
     }
 
     @Step("Клик по кнопке «Войти в аккаунт» на главной странице")
@@ -47,6 +50,26 @@ public class MainPage extends HeaderPage implements MainLocators {
     @Step("Клик на таб «Начинки» на главной странице")
     public void clickToTabIngredientFromMainPage(){
         clickToElement(storeTabIngredient);
+    }
+
+    @Step("Проверка активного таба в Конструкторе на главной странице")
+    public void checkActiveTabConstructorInMainPage(MainPageTabs activeTab) {
+
+        String baseXpathForCheckCurrentTab = "//span[text() = '%s']/parent::div[contains(@class, 'current')]";
+        // Базовый локатор для поиска активного таба после перехода (содержит в классе 'current')
+
+        if (activeTab == MainPageTabs.BUN) {
+            elementHasVisibility(By.xpath(String.format(baseXpathForCheckCurrentTab, "Булки")));
+        }
+
+        if (activeTab == MainPageTabs.SAUCES){
+            elementHasVisibility(By.xpath(String.format(baseXpathForCheckCurrentTab, "Соусы")));
+        }
+
+        if (activeTab == MainPageTabs.INGREDIENT){
+            elementHasVisibility(By.xpath(String.format(baseXpathForCheckCurrentTab, "Начинки")));
+        }
+
     }
 
 }

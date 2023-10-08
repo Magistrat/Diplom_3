@@ -1,8 +1,17 @@
 import com.pageobject.pages.MainPage;
+import com.pageobject.pages.MainPageTabs;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.Before;
 import org.junit.Test;
 
+import static com.pageobject.pages.BasePage.openMainPage;
+
 public class ConstructorTest extends BaseTest {
+
+    @Before
+    public void openMain() {
+        openMainPage(driver);
+    }
 
     @Test
     @DisplayName("Переход в таб «Булки»")
@@ -10,7 +19,7 @@ public class ConstructorTest extends BaseTest {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.checkMainPage(false);
-        mainPage.clickToTabBunFromMainPage();
+        mainPage.checkActiveTabConstructorInMainPage(MainPageTabs.BUN);
     }
 
     @Test
@@ -20,6 +29,7 @@ public class ConstructorTest extends BaseTest {
 
         mainPage.checkMainPage(false);
         mainPage.clickToTabSauceFromMainPage();
+        mainPage.checkActiveTabConstructorInMainPage(MainPageTabs.SAUCES);
     }
 
     @Test
@@ -29,6 +39,7 @@ public class ConstructorTest extends BaseTest {
 
         mainPage.checkMainPage(false);
         mainPage.clickToTabIngredientFromMainPage();
+        mainPage.checkActiveTabConstructorInMainPage(MainPageTabs.INGREDIENT);
     }
 
 }
